@@ -23,13 +23,13 @@ function connectNodes (done) {
   }
 
   function dial () {
-    global.apiClients.a.swarm.connect(addrs.b, (err1, res) => {
-      if (err1) {
-        throw err1
+    global.apiClients.a.swarm.connect(addrs.b, (err, res) => {
+      if (err) {
+        throw err
       }
-      global.apiClients.a.swarm.connect(addrs.c, (err2) => {
-        if (err2) {
-          throw err2
+      global.apiClients.a.swarm.connect(addrs.c, (err) => {
+        if (err) {
+          throw err
         }
         done()
       })

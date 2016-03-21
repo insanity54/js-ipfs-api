@@ -26,8 +26,8 @@ describe('.cat', () => {
 
         let buf = ''
         res
-          .on('error', (err1) => {
-            expect(err1).to.not.exist
+          .on('error', (err) => {
+            expect(err).to.not.exist
           })
           .on('data', (data) => {
             buf += data
@@ -50,8 +50,8 @@ describe('.cat', () => {
       testfileBig = require('fs').createReadStream(path.join(__dirname, '/../15mb.random'), { bufferSize: 128 })
 
       // Do not blow out the memory of nodejs :)
-      streamEqual(res, testfileBig, (err1, equal) => {
-        expect(err1).to.not.exist
+      streamEqual(res, testfileBig, (err, equal) => {
+        expect(err).to.not.exist
         expect(equal).to.be.true
         done()
       })

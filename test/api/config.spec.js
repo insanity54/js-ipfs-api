@@ -13,9 +13,9 @@ describe('.config', () => {
 
     apiClients.a.config.set(confKey, confVal, (err, res) => {
       expect(err).to.not.exist
-      apiClients.a.config.get(confKey, (err1, res1) => {
-        expect(err1).to.not.exist
-        expect(res1).to.have.a.property('Value', confVal)
+      apiClients.a.config.get(confKey, (err, res) => {
+        expect(err).to.not.exist
+        expect(res).to.have.a.property('Value', confVal)
         done()
       })
     })

@@ -43,13 +43,13 @@ describe('.files', () => {
       .write('/test-folder/test-file-2.txt', new Buffer('hello world'), {create: true}, (err) => {
         expect(err).to.not.exist
 
-        apiClients.a.files.read('/test-folder/test-file-2.txt', (err1, stream) => {
-          expect(err1).to.not.exist
+        apiClients.a.files.read('/test-folder/test-file-2.txt', (err, stream) => {
+          expect(err).to.not.exist
 
           let buf = ''
           stream
-            .on('error', (err2) => {
-              expect(err2).to.not.exist
+            .on('error', (err) => {
+              expect(err).to.not.exist
             })
             .on('data', (data) => {
               buf += data
@@ -96,8 +96,8 @@ describe('.files', () => {
       expect(err).to.not.exist
       let buf = ''
       stream
-        .on('error', (err1) => {
-          expect(err1).to.not.exist
+        .on('error', (err) => {
+          expect(err).to.not.exist
         })
         .on('data', (data) => {
           buf += data

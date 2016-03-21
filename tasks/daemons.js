@@ -27,22 +27,22 @@ function startDisposableDaemons (callback) {
   }
 
   function startIndependentNode (nodes, addrs, key, cb) {
-    ipfsd.disposable((err1, node) => {
-      if (err1) {
-        throw err1
+    ipfsd.disposable((err, node) => {
+      if (err) {
+        throw err
       }
 
       nodes[key] = node
 
       console.log('  ipfs init done - (bootstrap and mdns off) - ' + key)
 
-      nodes[key].setConfig('Bootstrap', null, (err2) => {
-        if (err2) {
-          throw err2
+      nodes[key].setConfig('Bootstrap', null, (err) => {
+        if (err) {
+          throw err
         }
-        nodes[key].setConfig('Discovery', '{}', (err3) => {
-          if (err3) {
-            throw err3
+        nodes[key].setConfig('Discovery', '{}', (err) => {
+          if (err) {
+            throw err
           }
 
           const headers = {
@@ -50,14 +50,14 @@ function startDisposableDaemons (callback) {
               'Access-Control-Allow-Origin': ['*']
             }
           }
-          nodes[key].setConfig('API', JSON.stringify(headers), (err4) => {
-            if (err4) {
-              throw err4
+          nodes[key].setConfig('API', JSON.stringify(headers), (err) => {
+            if (err) {
+              throw err
             }
 
-            nodes[key].startDaemon((err5, ignore) => {
-              if (err5) {
-                throw err5
+            nodes[key].startDaemon((err, ignore) => {
+              if (err) {
+                throw err
               }
 
               addrs[key] = nodes[key].apiAddr

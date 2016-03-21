@@ -34,8 +34,8 @@ describe('.object', () => {
 
       let buf = ''
       res
-        .on('error', (err1) => {
-          expect(err1).to.not.exist
+        .on('error', (err) => {
+          expect(err).to.not.exist
         })
         .on('data', (data) => {
           buf += data
@@ -90,9 +90,9 @@ describe('.object', () => {
             Hash: 'QmZFdJ3CQsY4kkyQtjoUo8oAzsEs5BNguxBhp8sjQMpgkd',
             Links: null
           })
-          apiClients.a.object.get(res.Hash, (err1, res2) => {
-            expect(err1).to.not.exist
-            expect(res2).to.be.eql({
+          apiClients.a.object.get(res.Hash, (err, res) => {
+            expect(err).to.not.exist
+            expect(res).to.be.eql({
               Data: 'testdata',
               Links: [{
                 Name: 'next',
@@ -113,9 +113,9 @@ describe('.object', () => {
             Hash: testObjectHash,
             Links: null
           })
-          apiClients.a.object.get(res.Hash, (err1, res2) => {
-            expect(err1).to.not.exist
-            expect(res2).to.be.eql({
+          apiClients.a.object.get(res.Hash, (err, res) => {
+            expect(err).to.not.exist
+            expect(res).to.be.eql({
               Data: 'testdata',
               Links: []
             })
@@ -132,9 +132,9 @@ describe('.object', () => {
             Hash: 'Qmcjhr2QztQxCAoEf8tJPTGTVkTsUrTQ36JurH14DNYNsc',
             Links: null
           })
-          apiClients.a.object.get(res.Hash, (err1, res2) => {
-            expect(err1).to.not.exist
-            expect(res2).to.be.eql({
+          apiClients.a.object.get(res.Hash, (err, res) => {
+            expect(err).to.not.exist
+            expect(res).to.be.eql({
               Data: 'testdata hello',
               Links: []
             })
@@ -150,9 +150,9 @@ describe('.object', () => {
             Hash: 'QmU1Sq1B7RPQD2XcQNLB58qJUyJffVJqihcxmmN1STPMxf',
             Links: null
           })
-          apiClients.a.object.get(res.Hash, (err1, res2) => {
-            expect(err1).to.not.exist
-            expect(res2).to.be.eql({
+          apiClients.a.object.get(res.Hash, (err, res) => {
+            expect(err).to.not.exist
+            expect(res).to.be.eql({
               Data: 'hello world',
               Links: []
             })

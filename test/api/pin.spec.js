@@ -33,10 +33,10 @@ describe('.pin', () => {
     apiClients.b.pin.remove('Qma4hjFTnCasJ8PVp3mZbZK5g2vGDT4LByLJ7m8ciyRFZP', {recursive: false}, (err, res) => {
       expect(err).to.not.exist
       expect(res).to.exist
-      apiClients.b.pin.list('direct', (err1, res1) => {
-        expect(err1).to.not.exist
-        expect(res1).to.exist
-        expect(res1.Keys).to.be.empty
+      apiClients.b.pin.list('direct', (err, res) => {
+        expect(err).to.not.exist
+        expect(res).to.exist
+        expect(res.Keys).to.be.empty
         done()
       })
     })

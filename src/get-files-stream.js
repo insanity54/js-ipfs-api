@@ -83,7 +83,7 @@ function loadPaths (opts, file) {
         return
       })
       // filter out null files
-      .filter((f) => Boolean(f))
+      .filter(Boolean)
   }
 
   return {
