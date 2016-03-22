@@ -50,7 +50,7 @@
     "ipfsd-ctl": "^0.8.1",
     "json-loader": "^0.5.3",
     "karma": "^0.13.11",
-    "karma-chrome-launcher": "^0.2.1",
+    "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.1.1",
