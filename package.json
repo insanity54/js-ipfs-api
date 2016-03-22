@@ -22,8 +22,8 @@
     "url": "https://github.com/ipfs/js-ipfs-api"
   },
   "devDependencies": {
-    "dignified.js": "1.0.0-beta.0",
     "chai": "^3.5.0",
+    "dignified.js": "github:dignifiedquire/dignified.js",
     "gulp": "^3.9.1",
     "ipfsd-ctl": "^0.8.3",
     "pre-commit": "^1.1.2",
@@ -35,8 +35,9 @@
     "test": "gulp test",
     "test:node": "gulp test:node",
     "test:browser": "gulp test:browser",
-    "lint": "gulp lint",
-    "build": "gulp build"
+    "lint": "dignified-lint",
+    "build": "dignified-build",
+    "release": "dignified-release"
   },
   "pre-commit": [
     "lint",
