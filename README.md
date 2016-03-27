@@ -77,7 +77,7 @@ $ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"http://exam
 
 ## Usage
 
-We classify the API calls by 'core', 'extensions', 'tooling', and 'network', following the same API spec organization available at [ipfs/specs](https://github.com/ipfs/specs/blob/ipfs/api/api/core/README.md)
+We classify the API calls by 'core', 'extensions', 'tooling', and 'network', following the same API spec organization available at [ipfs/specs](https://github.com/ipfs/specs/blob/master/api/core/README.md)
 
 The tests folder also contains great examples that can be used to understand how this client library interacts with the HTTP-API. You can find the tests here: https://github.com/ipfs/js-ipfs-api/tree/master/test/api
 
